@@ -18,9 +18,9 @@ pub fn home() -> Template {
     Template::render("home", &build_nav_list(0))
 }
 
-#[get("/experiences")]
+#[get("/my-story")]
 pub fn experiences() -> Template {
-    Template::render("experiences", &build_nav_list(1))
+    Template::render("my-story", &build_nav_list(1))
 }
 
 fn build_nav_list(i: usize) -> NavList {
@@ -32,8 +32,8 @@ fn build_nav_list(i: usize) -> NavList {
                 active: i == 0,
             },
             NavItem {
-                text: "Experiences & Education",
-                link: "../experiences",
+                text: "My Story",
+                link: "../my-story",
                 active: i == 1,
             },
         ]

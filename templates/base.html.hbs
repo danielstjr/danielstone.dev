@@ -22,56 +22,61 @@
             text-underline: lightgrey;
         }
 
-        .active {
-            text-decoration-line: underline;
-            text-underline: white;
-            color: white;
-            display: block;
-            padding: 0.5rem 1rem;
+        .navbar-dark {
+            background-color: #103535 !important;
         }
 
-        #nav-header {
-            color: white;
-            font-size: 2em;
-        }
-
-        #navbar {
-            background-color: #103535
+        .nav-link {
+            color: white !important;
         }
     </style>
-    <title>Daniel's Resume</title>
+    <title>Daniel's Website</title>
 </head>
 <body class="d-flex flex-column h-100">
 
 <div class="container-fluid flex-grow-1 d-flex">
-    <div class="row flex-fill flex-column flex-sm-row">
-        <div class="col-sm-3 col-md-2 flex-shrink-1" id="navbar">
-            <ul class="nav flex-sm-column sticky-top pt-3">
-                <li class="nav-link pt-5 pb-5" id="nav-header">
+    <div class="row wrapper flex-fill flex-column flex-sm-row">
+        <aside class="col-md-4 col-lg-3 col-xl-2 navbar-dark flex-md-shrink-1 flex-xl-grow-1" id="navbar">
+            <nav class="navbar navbar-expand-md bg-light navbar-dark align-items-start flex-md-column flex-row">
+                <a class="navbar-brand" href="#" style="pointer-events: none">
                     <h4>Daniel Stone</h4>
-                    <h6>Backend Software Developer</h6>
-                </li>
-                {{#each nav_items ~}}
-                    {{~#if active}}
-                        <li class="active">{{text}}</li>
-                    {{~^~}}
-                        <li class="nav-link"><a href="{{link}}">{{text}}</a></li>
-                    {{/if}}
-                {{~/each}}
-                <li class="nav-link pt-5"><a href="mailto:danielstjr@protonmail.com">Email Me</a></li>
-                <li class="nav-link">
-                    <a href="https://www.linkedin.com/in/daniel-stone-926688159/"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        LinkedIn
-                    </a>
-                </li>
-                <li class="nav-link">
-                    <a href="https://github.com/danielstjr" target="_blank" rel="noopener noreferrer">Github</a>
-                </li>
-            </ul>
-        </div>
-        <main class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 flex-grow-1 py-3">
+                    <h6>Backend Developer</h6>
+                </a>
+                <a href class="navbar-toggler mt-3" data-toggle="collapse" data-target=".sidebar">
+                    <span class="navbar-toggler-icon"></span>
+                </a>
+                <div class="collapse navbar-collapse sidebar">
+                    <ul class="flex-column navbar-nav w-100 justify-content-between">
+                        <li class="nav-item pt-md-4">
+                            <a class="nav-link pl-0" href="../">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pl-0" href="../my-story">My Story</a>
+                        </li>
+                        <li class="nav-item pt-md-4">
+                            <a class="nav-link pl-0" href="mailto:danielstjr@protonmail.com">Email Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pl-0"
+                               href="https://www.linkedin.com/in/daniel-stone-926688159/"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                LinkedIn
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pl-0"
+                               href="https://github.com/danielstjr"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                GitHub
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+        <main class="col-sm-12 col-md-8 col-lg-9 col-xl-10 flex-md-grow-1 flex-xl-shrink-1 py-3">
             {{~> page}}
         </main>
     </div>
