@@ -51,8 +51,13 @@
                     <h4>Daniel Stone</h4>
                     <h6>Backend Software Developer</h6>
                 </li>
-                <li class="active">Home</li>
-                <li class="nav-link"><a href="../experiences">Experience & Education</a></li>
+                {{#each nav_items ~}}
+                    {{~#if active}}
+                        <li class="active">{{text}}</li>
+                    {{~^~}}
+                        <li class="nav-link"><a href="{{link}}">{{text}}</a></li>
+                    {{/if}}
+                {{~/each}}
                 <li class="nav-link pt-5"><a href="mailto:danielstjr@protonmail.com">Email Me</a></li>
                 <li class="nav-link">
                     <a href="https://www.linkedin.com/in/daniel-stone-926688159/"
@@ -67,15 +72,7 @@
             </ul>
         </div>
         <main class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 flex-grow-1 py-3">
-            <div class="row flex-row align-items-center justify-content-center h-100">
-                <div class="pl-5 pr-5">
-                    <h3>Hello! I'm Daniel.</h3>
-                    <h4 class="pt-2">
-                        I'm an experienced software engineer looking for my next programming opportunity working in API
-                        development or embedded technologies.
-                    </h4>
-                </div>
-            </div>
+            {{~> page}}
         </main>
     </div>
 </div>
