@@ -14,12 +14,19 @@
     <style>
         a {
             color: white;
+            font-size: 1rem;
         }
 
         a:hover {
             color: lightgrey;
             text-decoration-line: underline;
             text-underline: lightgrey;
+        }
+
+        .active {
+            text-decoration-line: underline;
+            text-underline: white;
+            color: white;
         }
 
         .navbar-dark {
@@ -30,12 +37,13 @@
             color: white !important;
         }
     </style>
+        {{~> styles}}
     <title>Daniel's Website</title>
 </head>
 <body class="d-flex flex-column h-100">
 
 <div class="container-fluid flex-grow-1 d-flex">
-    <div class="row wrapper flex-fill flex-column flex-sm-row">
+    <div class="row wrapper flex-fill flex-column flex-md-row">
         <aside class="col-md-4 col-lg-3 col-xl-2 navbar-dark flex-md-shrink-1 flex-xl-grow-1" id="navbar">
             <nav class="navbar navbar-expand-md bg-light navbar-dark align-items-start flex-md-column flex-row">
                 <a class="navbar-brand" href="#" style="pointer-events: none">
@@ -47,12 +55,21 @@
                 </a>
                 <div class="collapse navbar-collapse sidebar">
                     <ul class="flex-column navbar-nav w-100 justify-content-between">
-                        <li class="nav-item pt-md-4">
-                            <a class="nav-link pl-0" href="../">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pl-0" href="../my-story">My Story</a>
-                        </li>
+                        {{#each nav_items ~}}
+                            {{#if @first}}
+                                <div class="pt-md-1">
+                            {{/if}}
+                            {{~#if active}}
+                                <li class="nav-item pt-1 pb-2 pt-md-3 active">{{ text }}</li>
+                            {{~^~}}
+                                <li class="nav-item pt-1 pb-2 pt-md-3">
+                                    <a href="{{ link }}">{{ text }}</a>
+                                </li>
+                            {{/if}}
+                            {{#if @first}}
+                                </div>
+                            {{/if}}
+                        {{~/each}}
                         <li class="nav-item pt-md-4">
                             <a class="nav-link pl-0" href="mailto:danielstjr@protonmail.com">Email Me</a>
                         </li>
@@ -76,8 +93,10 @@
                 </div>
             </nav>
         </aside>
-        <main class="col-sm-12 col-md-8 col-lg-9 col-xl-10 flex-md-grow-1 flex-xl-shrink-1 py-3">
-            {{~> page}}
+        <main class="col-md-8 col-lg-9 col-xl-10 flex-md-grow-1 flex-xl-shrink-1 py-3 flex-md-column flex-row">
+            <div class="row align-items-center justify-content-center h-100">
+                {{~> content}}
+            </div>
         </main>
     </div>
 </div>
