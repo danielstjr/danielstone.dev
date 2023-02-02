@@ -45,7 +45,7 @@
 <div class="container-fluid flex-grow-1 d-flex">
     <div class="row wrapper flex-fill flex-column flex-md-row">
         <aside class="col-md-4 col-lg-3 col-xl-2 navbar-dark flex-md-shrink-1 flex-xl-grow-1" id="navbar">
-            <nav class="navbar navbar-expand-md bg-light navbar-dark align-items-start flex-md-column flex-row">
+            <nav class="navbar navbar-expand-md bg-light navbar-dark align-items-start flex-md-column flex-row sticky-top">
                 <a class="navbar-brand" href="#" style="pointer-events: none">
                     <h4>Daniel Stone</h4>
                     <h6>Backend Developer</h6>
@@ -57,12 +57,12 @@
                     <ul class="flex-column navbar-nav w-100 justify-content-between">
                         {{#each nav_items ~}}
                             {{#if @first}}
-                                <div class="pt-md-1">
+                                <div class="p-0 m-0 pt-md-3">
                             {{/if}}
                             {{~#if active}}
-                                <li class="nav-item pt-1 pb-2 pt-md-3 active">{{ text }}</li>
+                                <li class="nav-item pt-1 pb-2 pt-md-2 active">{{ text }}</li>
                             {{~^~}}
-                                <li class="nav-item pt-1 pb-2 pt-md-3">
+                                <li class="nav-item pt-1 pb-2 pt-md-2">
                                     <a href="{{ link }}">{{ text }}</a>
                                 </li>
                             {{/if}}
