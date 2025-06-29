@@ -1,9 +1,58 @@
+{{#*inline "styles"}}
+    <style>
+        .icon {
+            height: 25px;
+            width: 25px;
+        }
+    </style>
+{{/inline}}
 {{#*inline "content"}}
-    <div class="ps-5 pe-5">
-        <p class="fs-1">Hello! I'm Daniel.</p>
-        <p class="fs-2">
-            I'm an experienced senior software engineer looking to work on cool problems in web API or embedded systems
-        </p>
+    <div class="row justify-content-between h-100">
+        <div class="row align-items-end">
+            <div>
+                <div class="fs-1">Hello! I'm Daniel.</div>
+                <div class="fs-2">
+                    I'm an experienced senior software engineering specializing in backend development with a focus on PHP.
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-end">
+            <div class="col">
+                <a class="card" href="mailto:jobs@danielstone.dev">
+                    <div class="card-body">
+                        <p class="card-text text-dark">
+                            <img src="/assets/mail.svg" class="icon" alt="Email Icon"/> Email Me
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a class="card"
+                   href="https://www.linkedin.com/in/daniel-stone-926688159/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                >
+                    <div class="card-body">
+                        <p class="card-text text-dark">
+                            <img src="/assets/LI-In-Bug.png" class="icon" alt="LinkedIn Icon"/> LinkedIn
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a class="card"
+                   href="https://github.com/danielstjr"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                >
+                    <div class="card-body">
+                        <p class="card-text text-dark">
+                            <img src="/assets/github-mark.svg" class="icon" alt="GitHub Icon"/> GitHub
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
 {{/inline}}
 {{> base}}
