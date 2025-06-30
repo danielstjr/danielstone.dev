@@ -26,7 +26,7 @@
             text-underline: lightgrey;
         }
 
-        .navbar-dark {
+        #navbar {
             background-color: #103535 !important;
         }
 
@@ -39,14 +39,14 @@
 <body class="d-flex flex-column h-100">
 
 <div class="container-fluid flex-grow-1 d-flex">
-    <div class="row wrapper flex-fill flex-column flex-md-row">
-        <aside class="col-md-4 col-lg-3 col-xl-2 col-xxl-1 navbar-dark flex-md-shrink-1 flex-xl-grow-1" id="navbar">
-            <nav class="navbar navbar-expand-md navbar-dark align-items-start flex-md-column flex-row sticky-top">
+    <div class="wrapper row">
+        <aside id="navbar" class="col-md-4 col-lg-3 col-xl-2 col-xxl-1 align-self-start align-self-md-stretch flex-shrink-1 flex-xl-grow-1">
+            <nav class="navbar navbar-expand-md align-items-start flex-md-column flex-row sticky-top">
                 <a class="navbar-brand ps-2 pe-none" href="#">
                     <h4>Daniel Stone</h4>
                     <h6>Senior Software Developer</h6>
                 </a>
-                <button class="navbar-toggler mt-3"
+                <button class="navbar-toggler navbar-dark mt-3"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#sidebar"
@@ -57,7 +57,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div id="sidebar" class="collapse navbar-collapse">
-                    <ul class="flex-column navbar-nav w-100 ps-md-3 ps-2">
+                    <ul class="flex-column navbar-nav ps-2 ps-md-3">
                         {{#each nav_items ~}}
                             <div {{#if @first}}class="p-0 m-0 pt-md-3"{{/if}}>
                                 <li>
@@ -69,7 +69,7 @@
                                 </li>
                             </div>
                         {{~/each}}
-                        <hr class="bg-danger border-2 border-top border-white d-md-block d-none" />
+                        <hr class="border-2 border-top border-white d-none d-md-block" />
                         <li>
                             <a class="text-white p-0" href="mailto:jobs@danielstone.dev">
                                 Email Me
@@ -85,7 +85,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link p-0"
+                            <a class="text-white p-0"
                                href="https://github.com/danielstjr"
                                target="_blank"
                                rel="noopener noreferrer"
@@ -97,8 +97,8 @@
                 </div>
             </nav>
         </aside>
-        <main class="col-md-8 col-lg-9 col-xl-9 flex-md-grow-1 flex-xl-shrink-1 py-3 flex-md-column flex-row">
-            <div class="p-0 m-0 ps-2 ps-md-4 pe-2 pe-md-4 h-100">
+        <main class="col-md-8 col-lg-9 col-xl-9 flex-xl-shrink-1 py-3 px-3 px-md-4 flex-row">
+            <div class="p-0 m-0 h-100">
                 {{~> content}}
             </div>
         </main>
