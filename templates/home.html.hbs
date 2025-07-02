@@ -1,5 +1,9 @@
 {{#*inline "styles"}}
     <style>
+        #portrait-container {
+            height: 250px;
+            width: 250px;
+        }
         .icon {
             height: 25px;
             width: 25px;
@@ -7,8 +11,12 @@
     </style>
 {{/inline}}
 {{#*inline "content"}}
-    <div class="row h-100">
-        <div class="row align-items-start align-items-md-end">
+        <div class="row d-flex text-center justify-content-center align-items-center">
+            <div id="portrait-container">
+                <img src="/assets/me.jpg" class="img-fluid rounded-circle" alt="Daniel Stone"/>
+            </div>
+        </div>
+        <div class="row align-items-start">
             <div>
                 <div class="fs-1">Hello! I'm Daniel.</div>
                 <div class="fs-2">
@@ -56,6 +64,5 @@
                 </a>
             </div>
         </div>
-    </div>
 {{/inline}}
 {{> base}}
