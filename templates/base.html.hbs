@@ -111,7 +111,7 @@
     <h6>Senior Software Developer</h6>
     <ul class="nav flex-column mt-4 ms-2">
         {{#each nav_items ~}}
-            <li class="nav-item py-1">
+            <li class="nav-item">
                 {{#if active}}
                     <span class="fw-bold text-white">{{ text }}</span>
                 {{else}}
@@ -119,20 +119,19 @@
                 {{/if}}
             </li>
         {{/each}}
-        <hr class="border-2 border-top border-light">
-        <li class="nav-item py-1">
+        <li class="nav-item mt-3">
             <a href="mailto:jobs@danielstone.dev">Email Me</a>
         </li>
-        <li class="nav-item py-1">
+        <li class="nav-item">
             <a href="https://www.linkedin.com/in/daniel-stone-926688159/" target="_blank">LinkedIn</a>
         </li>
-        <li class="nav-item py-1">
+        <li class="nav-item">
             <a href="https://github.com/danielstjr" target="_blank">GitHub</a>
         </li>
     </ul>
 </aside>
 
-<main class="flex-grow-1 p-3">
+<main class="flex-grow-1 p-3 d-flex flex-column">
     {{~> content}}
 </main>
 
